@@ -1,0 +1,61 @@
+{
+  "patients": [
+    {
+      "id": "6b57",
+      "prenom": "salma",
+      "nom": "rami",
+      "birthDate": "1999-12-01",
+      "telephone": "+212680895736",
+      "adresse": "12345678io",
+      "email": "rayhanasabbar19@gmail.com",
+      "groupeSanguin": "B+",
+      "allergies": "azmatique",
+      "dossierNum": "D01",
+      "bloodGroup": "A+"
+    },
+    {
+      "id": "e7b8",
+      "prenom": "rayhana",
+      "nom": "sabbar",
+      "telephone": "+212680895736",
+      "adresse": "hay el masjid ",
+      "email": "rayhanasabbar19@gmail.com",
+      "birthDate": "2005-10-13",
+      "groupeSanguin": "B-",
+      "allergies": "non",
+      "dossierNum": "D02",
+      "bloodGroup": "AB+"
+    },
+    {
+      "id": "5849",
+      "prenom": "rayhana",
+      "nom": "sabbar",
+      "birthDate": "2005-10-13",
+      "telephone": "+212680895736",
+      "adresse": "hay el masjid ",
+      "email": "rayhanasabbar19@gmail.com",
+      "bloodGroup": "O+",
+      "allergies": "people",
+      "dossierNum": "D03"
+    }
+  ],
+  "rendezVous": [
+    {
+      "id": "6ff3",
+      "patientId": "6b57",
+      "date": "2026-01-13",
+      "heure": "09:59",
+      "raison": "Contrôle",
+      "statut": "Honoré"
+    },
+    {
+      "id": "fd21",
+      "patientId": "e7b8",
+      "date": "2026-01-12",
+      "heure": "10:07",
+      "raison": "Certificat",
+      "statut": "Honoré"
+    }
+  ],
+  "consultations": []
+}

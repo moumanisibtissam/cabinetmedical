@@ -15,8 +15,8 @@ const navItems = [
     icon: Users,
   },
   {
-    label: "Appointments",
-    href: "/appointments",
+    label: "Rendez-vous",
+    href: "/rendez-vous",
     icon: Calendar,
   },
   {
@@ -25,8 +25,8 @@ const navItems = [
     icon: FileText,
   },
   {
-    label: "Reports",
-    href: "/reports",
+    label: "Planning",
+    href: "/planning",
     icon: BarChart3,
   },
 ]
