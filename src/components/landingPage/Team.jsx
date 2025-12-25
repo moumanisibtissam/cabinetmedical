@@ -16,11 +16,9 @@ export function Team() {
 						<div className="w-24 h-24 mx-auto bg-primary/10 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
 							<User className="w-10 h-10 text-primary" />
 						</div>
-						<h3 className="text-2xl font-bold mb-2">Ibtissam</h3>
+						<h3 className="text-2xl font-bold mb-2">Ibtissam Moumanis</h3>
 						<p className="text-primary font-medium mb-4">Project Developer</p>
-						<p className="text-muted-foreground text-sm">
-							En charge de l'architecture et du développement core de l'application.
-						</p>
+						
 					</div>
 
 					{/* Team Member 2 */}
@@ -28,11 +26,9 @@ export function Team() {
 						<div className="w-24 h-24 mx-auto bg-primary/10 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
 							<User className="w-10 h-10 text-primary" />
 						</div>
-						<h3 className="text-2xl font-bold mb-2">xia</h3>
+						<h3 className="text-2xl font-bold mb-2">Rayhana Sabbar</h3>
 						<p className="text-primary font-medium mb-4">Project Developer</p>
-						<p className="text-muted-foreground text-sm">
-							Spécialiste frontend et expérience utilisateur (UX/UI).
-						</p>
+						
 					</div>
 				</div>
 			</div>

@@ -35,7 +35,7 @@ ReactDOM.createRoot(root).render(
           <Route path="/rendez-vous" element={<RendezList />} />
           <Route path="/rendez-vous/ajouter" element={<RendezForm />} />
           <Route path="/consultations" element={<ConsultationsList />} />
-          <Route path="/Consultation/ajouter" element={<ConsultationForm />} />
+          <Route path="/consultations/ajouter" element={<ConsultationForm />} />
           <Route path="/planning" element={<Planning />} />
 
         </Route>
