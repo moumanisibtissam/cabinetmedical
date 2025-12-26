@@ -34,13 +34,13 @@ const features = [
 
 export default function Features() {
   return (
-    <section id="fonctionnalites" className=" bg-secondary/30 py-20 md:py-28">
+    <section id="fonctionnalites" className="bg-secondary/30 py-20 md:py-28">
       <div className="container mx-auto max-w-7xl px-4">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-[#006d77] mb-4">
             Une gestion complète du cabinet médical
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg text-gray-500 max-w-2xl mx-auto">
             Une solution digitale moderne pour organiser les patients,
             les rendez-vous et les consultations efficacement.
           </p>
@@ -52,15 +52,15 @@ export default function Features() {
             return (
               <div
                 key={feature.title}
-                className="group p-8 rounded-xl border border-border bg-card hover:border-primary/50 transition-all hover:shadow-lg"
+                className="group p-8 rounded-xl border border-gray-200 bg-white hover:border-[#006d77]/50 transition-all hover:shadow-lg"
               >
-                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition">
-                  <Icon className="w-6 h-6 text-primary" />
+                <div className="w-12 h-12 rounded-lg bg-[#006d77]/10 flex items-center justify-center mb-4 group-hover:bg-[#006d77]/20 transition">
+                  <Icon className="w-6 h-6 text-[#006d77]" />
                 </div>
-                <h3 className="text-xl font-semibold text-foreground mb-3">
+                <h3 className="text-xl font-semibold text-gray-800 mb-3">
                   {feature.title}
                 </h3>
-                <p className="text-muted-foreground">
+                <p className="text-gray-500">
                   {feature.description}
                 </p>
               </div>

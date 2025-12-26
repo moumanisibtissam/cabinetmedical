@@ -9,7 +9,7 @@
       "email": "Alibaba@gmail.com",
       "adresse": "France,Paris",
       "bloodGroup": "B-",
-      "allergies": "aucun",
+      "allergies": "aucune",
       "dossierNum": "D01"
     },
     {
@@ -57,6 +57,14 @@
       "heure": "15:00",
       "raison": "Certificat",
       "statut": "Confirmé"
+    },
+    {
+      "id": "e2c6",
+      "patientId": "6ac2",
+      "date": "2026-02-11",
+      "heure": "12:30",
+      "raison": "Urgence",
+      "statut": "Confirmé"
     }
   ],
   "consultations": [
@@ -71,6 +79,18 @@
       "paymentMode": "Card",
       "status": "En attente",
       "createdAt": "2025-12-26T09:57:29.037Z"
+    },
+    {
+      "id": 1766747768412,
+      "patientId": "c1ce",
+      "date": "2025-12-26",
+      "reason": "moti",
+      "diagnosis": "diagno",
+      "prescription": "",
+      "fee": "1000",
+      "paymentMode": "Cash",
+      "status": "En attente",
+      "createdAt": "2025-12-26T11:16:08.412Z"
     }
   ]
 }

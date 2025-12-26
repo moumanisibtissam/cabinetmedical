@@ -69,6 +69,12 @@ export default function ConsultationForm() {
 
   return (
     <div className="p-6 max-w-xl mx-auto">
+      <button
+        onClick={() => navigate(-1)}
+        className="text-gray-500 mb-4 flex items-center gap-2"
+      >
+        ← Back to Consultation 
+      </button>
       <h1 className="text-2xl font-bold mb-4">Nouvelle Consultation</h1>
       <form
         onSubmit={handleSubmit}
