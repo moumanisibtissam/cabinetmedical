@@ -34,7 +34,7 @@ export default function Footer() {
 
         <div className="border-t border-gray-200 pt-8">
           <p className="text-center text-sm text-gray-500">
-            © 2025 Cabinet Dr. Amrani. All rights reserved.
+            © 2025 Cabinet Dr. Amrani.
           </p>
         </div>
       </div>
