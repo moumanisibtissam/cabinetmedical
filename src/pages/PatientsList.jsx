@@ -148,7 +148,6 @@ export default function PatientsList() {
                       `${calculateAge(p.birthDate)} years`
                     )}
                   </td>
-
                   <td className="py-4">
                     {editingId === p.id ? (
                       <input
@@ -201,6 +200,13 @@ export default function PatientsList() {
                       p.allergies || "—"
                     )}
                   </td>
+
+
+                  
+
+                  
+
+                 
 
                   <td className="py-4 flex justify-between items-center">
                     {editingId === p.id ? (

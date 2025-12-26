@@ -1,97 +1,76 @@
 {
   "patients": [
     {
-      "id": "6b57",
-      "prenom": "salma",
-      "nom": "rami",
-      "birthDate": "1999-12-01",
-      "telephone": "+212680895736",
-      "adresse": "12345678io",
-      "email": "rayhanasabbar19@gmail.com",
-      "groupeSanguin": "B+",
-      "allergies": "azmatique",
-      "dossierNum": "D01",
-      "bloodGroup": "A+"
+      "id": "fed1",
+      "prenom": "Yasser",
+      "nom": "Slami",
+      "birthDate": "1978-01-12",
+      "telephone": "+2127000000",
+      "email": "Alibaba@gmail.com",
+      "adresse": "France,Paris",
+      "bloodGroup": "B-",
+      "allergies": "aucun",
+      "dossierNum": "D01"
     },
     {
-      "id": "e7b8",
-      "prenom": "rayhana",
-      "nom": "sabbar",
-      "telephone": "+212680895736",
-      "adresse": "hay el masjid ",
-      "email": "rayhanasabbar19@gmail.com",
-      "birthDate": "2005-10-13",
-      "groupeSanguin": "B-",
+      "id": "c1ce",
+      "prenom": "Salma",
+      "nom": "Tazi",
+      "birthDate": "1999-11-22",
+      "telephone": "+2127020030",
+      "adresse": "Maroc,Rabat",
+      "email": "Salmatazi@gmail.com",
+      "bloodGroup": "A+",
       "allergies": "non",
-      "dossierNum": "D02",
-      "bloodGroup": "AB+"
+      "dossierNum": "D02"
     },
     {
-      "id": "5849",
-      "prenom": "rayhana",
-      "nom": "sabbar",
-      "birthDate": "2005-10-13",
-      "telephone": "+212680895736",
-      "adresse": "hay el masjid ",
-      "email": "rayhanasabbar19@gmail.com",
-      "bloodGroup": "O+",
-      "allergies": "people",
+      "id": "6ac2",
+      "prenom": "Daniel",
+      "nom": "Carlos",
+      "birthDate": "1979-06-09",
+      "telephone": "+2127020030",
+      "adresse": "EtatUnies ,Las Vegas ",
+      "email": "DanielCarlos@gmail.com",
+      "bloodGroup": "AB+",
+      "allergies": "Azmatique",
       "dossierNum": "D03"
     },
     {
-      "id": "91e9",
-      "prenom": "rayhana",
-      "nom": "sabbar",
-      "birthDate": "2005-10-13",
-      "telephone": "+212680895736",
-      "adresse": "hay el masjid ",
-      "email": "rayhanasabbar19@gmail.com",
-      "bloodGroup": "A+",
+      "id": "3012",
+      "prenom": "Laura",
+      "nom": "Alen",
+      "birthDate": "2002-08-19",
+      "telephone": "+2127097331",
+      "adresse": "EtatUnies ,Las Vegas ",
+      "email": "Lauraalen@gmail.com",
+      "bloodGroup": "O-",
       "allergies": "non",
       "dossierNum": "D04"
-    },
-    {
-      "id": "9048",
-      "prenom": "rayhana",
-      "nom": "sabbar",
-      "birthDate": "2005-10-13",
-      "telephone": "+212680895736",
-      "adresse": "hay el masjid ",
-      "email": "rayhanasabbar19@gmail.com",
-      "bloodGroup": "AB-",
-      "allergies": "azmatique",
-      "dossierNum": "D05"
-    },
-    {
-      "id": "f599",
-      "prenom": "diae",
-      "nom": "sabbar",
-      "birthDate": "2005-10-13",
-      "telephone": "+212680895736",
-      "adresse": "hay el masjid ",
-      "email": "rayhanasabbar19@gmail.com",
-      "bloodGroup": "B+",
-      "allergies": "non",
-      "dossierNum": "D06"
     }
   ],
   "rendezVous": [
     {
-      "id": "6ff3",
-      "patientId": "6b57",
-      "date": "2026-01-13",
-      "heure": "09:59",
-      "raison": "Contrôle",
-      "statut": "Confirmé"
-    },
-    {
-      "id": "fd21",
-      "patientId": "e7b8",
-      "date": "2026-01-12",
-      "heure": "10:07",
+      "id": "828f",
+      "patientId": "3012",
+      "date": "2025-12-26",
+      "heure": "15:00",
       "raison": "Certificat",
-      "statut": "Honoré"
+      "statut": "Confirmé"
     }
   ],
-  "consultations": []
+  "consultations": [
+    {
+      "id": 1766743049037,
+      "patientId": "3012",
+      "date": "2025-12-26",
+      "reason": "motif",
+      "diagnosis": "diagnostique",
+      "prescription": "",
+      "fee": "300",
+      "paymentMode": "Card",
+      "status": "En attente",
+      "createdAt": "2025-12-26T09:57:29.037Z"
+    }
+  ]
 }

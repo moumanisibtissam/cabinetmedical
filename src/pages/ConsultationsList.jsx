@@ -1,58 +1,50 @@
 import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { Plus, FileText, History } from "lucide-react";
-import { fetchConsultations } from "../features/consultationsSlice";
 
 export default function ConsultationsList() {
   const navigate = useNavigate();
-  const dispatch = useDispatch();
-
-  // Sélecteurs sécurisés avec fallback
-  const consultations = useSelector((state) => state.consultations?.consultations ?? []);
-  const consultationsStatus = useSelector((state) => state.consultations?.status ?? "idle");
-  const consultationsError = useSelector((state) => state.consultations?.error);
-
-  const patients = useSelector((state) => state.patients?.patients ?? []);
-  const patientsStatus = useSelector((state) => state.patients?.status ?? "idle");
-
+  const [consultations, setConsultations] = useState([]);
+  const [patients, setPatients] = useState([]);
   const [selectedPatient, setSelectedPatient] = useState("");
 
+  // Charger les consultations
   useEffect(() => {
-    if (consultationsStatus === "idle") {
-      dispatch(fetchConsultations());
-    }
-  }, [dispatch, consultationsStatus]);
+    fetch("http://localhost:4000/consultations")
+      .then((res) => res.json())
+      .then((data) => setConsultations(data))
+      .catch((err) => console.error("Erreur consultations:", err));
+  }, []);
+
+  // Charger les patients
+  useEffect(() => {
+    fetch("http://localhost:4000/patients")
+      .then((res) => res.json())
+      .then((data) => setPatients(data))
+      .catch((err) => console.error("Erreur patients:", err));
+  }, []);
 
   // Filtrer et trier
   const filteredConsultations = selectedPatient
-    ? consultations.filter((c) => c?.patientId === selectedPatient)
+    ? consultations.filter(
+        (c) => String(c?.patientId) === String(selectedPatient)
+      )
     : consultations;
 
   const sortedConsultations = [...filteredConsultations].sort(
-    (a, b) => new Date(b?.date ?? 0).getTime() - new Date(a?.date ?? 0).getTime()
+    (a, b) =>
+      new Date(b?.date ?? 0).getTime() - new Date(a?.date ?? 0).getTime()
   );
 
   const getPatientConsultationCount = (patientId) =>
-    consultations.filter((c) => c?.patientId === patientId).length;
+    consultations.filter(
+      (c) => String(c?.patientId) === String(patientId)
+    ).length;
 
   const getPatientName = (patientId) => {
-    const p = patients.find((x) => x?.id === patientId);
+    const p = patients.find((x) => String(x?.id) === String(patientId));
     return p ? `${p.prenom ?? ""} ${p.nom ?? ""}`.trim() : "Patient inconnu";
   };
-
-  // États de chargement / erreur
-  if (consultationsStatus === "loading" && consultations.length === 0) {
-    return <div className="p-8">Chargement des consultations…</div>;
-  }
-
-  if (consultationsError) {
-    return (
-      <div className="p-8 text-red-700">
-        Erreur lors du chargement des consultations. Réessayez plus tard.
-      </div>
-    );
-  }
 
   return (
     <div className="p-8">
@@ -60,7 +52,9 @@ export default function ConsultationsList() {
       <div className="flex items-center justify-between mb-8">
         <div>
           <h1 className="text-3xl font-bold text-gray-800">Consultations</h1>
-          <p className="text-gray-500 mt-2">Enregistrez et gérez les consultations</p>
+          <p className="text-gray-500 mt-2">
+            Enregistrez et gérez les consultations
+          </p>
         </div>
         <button
           className="flex items-center gap-2 bg-[#006d77] text-white px-4 py-2 rounded-lg hover:bg-[#005f66]"
@@ -86,7 +80,8 @@ export default function ConsultationsList() {
             <option value="">Tous les Patients</option>
             {patients.map((patient) => (
               <option key={patient.id} value={patient.id}>
-                {patient.prenom} {patient.nom} ({getPatientConsultationCount(patient.id)} consultations)
+                {patient.prenom} {patient.nom} (
+                {getPatientConsultationCount(patient.id)} consultations)
               </option>
             ))}
           </select>
@@ -114,11 +109,15 @@ export default function ConsultationsList() {
       ) : (
         <div className="grid gap-6">
           {sortedConsultations.map((consultation) => (
-            <div key={consultation.id} className="bg-white rounded-lg border border-gray-200 p-6">
+            <div
+              key={consultation.id}
+              className="bg-white rounded-lg border border-gray-200 p-6"
+            >
               <div className="flex items-center justify-between mb-4">
                 <div>
                   <h3 className="font-semibold text-lg text-gray-800">
-                    {consultation.patientName || getPatientName(consultation.patientId)}
+                    {consultation.patientName ||
+                      getPatientName(consultation.patientId)}
                   </h3>
                   <p className="text-sm text-gray-500">
                     {consultation.date
@@ -140,29 +139,42 @@ export default function ConsultationsList() {
               <div className="grid md:grid-cols-2 gap-6 text-sm">
                 <div>
                   <p className="text-gray-500 font-medium mb-1">Motif</p>
-                  <p className="text-gray-800">{consultation.reason || "—"}</p>
+                  <p className="text-gray-800">
+                    {consultation.reason || "—"}
+                  </p>
                 </div>
                 <div>
                   <p className="text-gray-500 font-medium mb-1">Diagnostic</p>
-                  <p className="text-gray-800">{consultation.diagnosis || "—"}</p>
+                  <p className="text-gray-800">
+                    {consultation.diagnosis || "—"}
+                  </p>
                 </div>
                 <div>
-                  <p className="text-gray-500 font-medium mb-1">Tarif & Paiement</p>
+                  <p className="text-gray-500 font-medium mb-1">
+                    Tarif & Paiement
+                  </p>
                   <p className="text-gray-800">
-                    {consultation.fee ?? "—"} DH - <span className="font-medium">{consultation.paymentMode || "—"}</span>
+                    {consultation.fee ?? "—"} DH -{" "}
+                    <span className="font-medium">
+                      {consultation.paymentMode || "—"}
+                    </span>
                   </p>
                 </div>
                 {consultation.prescription && (
                   <div>
                     <p className="text-gray-500 font-medium mb-1">Ordonnance</p>
-                    <p className="text-gray-800">{consultation.prescription}</p>
+                    <p className="text-gray-800">
+                      {consultation.prescription}
+                    </p>
                   </div>
                 )}
               </div>
 
               {consultation.notes && (
                 <div className="mt-4 pt-4 border-t border-gray-200">
-                  <p className="text-gray-500 font-medium text-sm mb-1">Notes Additionnelles</p>
+                  <p className="text-gray-500 font-medium text-sm mb-1">
+                    Notes Additionnelles
+                  </p>
                   <p className="text-gray-800 text-sm">{consultation.notes}</p>
                 </div>
               )}
